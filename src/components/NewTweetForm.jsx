@@ -25,17 +25,21 @@ class NewTweetForm extends React.Component {
             ref="_img"
             type="text"
             id="img"
-            placeholder="image URL"/>
+            placeholder="image URL"
+            required/>
           <input
             ref="_title"
             type="text"
             id="title"
-            placeholder="enter title"/>
+            placeholder="enter title"
+            required/>
           <input
             ref="_content"
             type="text"
             id="content"
-            placeholder="enter blessing"/>
+            placeholder="enter blessing"
+            maxLength="50"
+            required/>
           <button type="submit">Send blessing.</button>
         </form>
       </div>

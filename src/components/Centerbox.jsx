@@ -22,7 +22,7 @@ class Centerbox extends React.Component {
     var centerBoxStyle = {
       display: "inline-block",
       verticalAlign: "top",
-      minWidth: "500",
+      minWidth: "600",
       overflow: "hidden",
       border: "lightgrey 1px solid",
       padding: "10"

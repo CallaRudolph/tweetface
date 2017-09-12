@@ -12,7 +12,6 @@ class Tweet extends React.Component {
   }
 
   addLikes() {
-    console.log(this.state.likes);
     var newLike = this.state.likes + 1;
     this.setState({likes: newLike});
   }
@@ -24,17 +23,27 @@ class Tweet extends React.Component {
       margin: "10",
       marginLeft: "20"
     }
+
     var tweetStyle = {
       marginLeft: "20",
       display: "inline-block",
-      width: "80%"
+      width: "50%"
     }
+
+    var likeStyle = {
+      display: "inline-block",
+      float: "right",
+      paddingTop: "20"
+    }
+
     return(
       <div>
         <img style={imgStyle} src={this.props.img}/>
         <div style={tweetStyle}>
           <h3>{this.props.title}</h3>
           <p>{this.props.content}</p>
+        </div>
+        <div style={likeStyle}>
           <button onClick={this.addLikes}>Like</button>
           <p>Likes: {this.state.likes}</p>
         </div>
@@ -45,9 +54,9 @@ class Tweet extends React.Component {
 }
 
 Tweet.propTypes = {
-  img: PropTypes.string,
-  title: PropTypes.string,
-  content: PropTypes.string
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 }
 
 export default Tweet;
