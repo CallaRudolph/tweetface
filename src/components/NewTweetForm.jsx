@@ -1,4 +1,5 @@
 import React from "react";
+import Tweet from "../models/tweet.js";
 
 class NewTweetForm extends React.Component {
 
@@ -10,7 +11,8 @@ class NewTweetForm extends React.Component {
   handleNewTweetSubmission(event) {
     event.preventDefault();
     const {_img, _title, _content} = this.refs;
-    alert(`Data! ${_img.value}, ${_title.value}, ${_content.value}`);
+    var newTweet = new Tweet(_img.value, _title.value, _content.value);
+    console.log(newTweet);
   }
 
   render(){
