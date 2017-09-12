@@ -19,8 +19,16 @@ class Centerbox extends React.Component {
   }
 
   render() {
+    var centerBoxStyle = {
+      display: "inline-block",
+      verticalAlign: "top",
+      minWidth: "500",
+      overflow: "hidden",
+      border: "lightgrey 1px solid",
+      padding: "10"
+    }
     return (
-      <div>
+      <div style={centerBoxStyle}>
         <NewTweetControl onNewTweetCreation = {this.addNewTweetToList}/>
         <hr/>
         <TweetFeed

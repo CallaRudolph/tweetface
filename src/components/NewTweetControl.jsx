@@ -27,6 +27,7 @@ class NewTweetControl extends React.Component {
   }
 
   render(){
+    
     const formVisible = this.state.formVisible;
     let formAreaContent = null;
     if (formVisible) {
