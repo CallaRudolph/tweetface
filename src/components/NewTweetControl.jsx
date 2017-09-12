@@ -27,7 +27,12 @@ class NewTweetControl extends React.Component {
   }
 
   render(){
-    
+
+    var buttonStyle = {
+      fontSize: "20",
+      backgroundColor: "#99ebff"
+    }
+
     const formVisible = this.state.formVisible;
     let formAreaContent = null;
     if (formVisible) {
@@ -35,7 +40,7 @@ class NewTweetControl extends React.Component {
         onNewTweetCreation={this.props.onNewTweetCreation}
         hideFormAfterSubmission = {this.hideForm}/>
     } else {
-      formAreaContent = <button onClick={this.showForm}>Give Blessing...</button>
+      formAreaContent = <button style={buttonStyle} onClick={this.showForm}>Give Blessing...</button>
     }
 
     return (
