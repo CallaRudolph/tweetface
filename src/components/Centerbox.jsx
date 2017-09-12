@@ -1,5 +1,4 @@
 import React from 'react';
-import PostInput from './PostInput';
 import TweetFeed from './TweetFeed';
 import NewTweetControl from './NewTweetControl';
 
@@ -23,7 +22,6 @@ class Centerbox extends React.Component {
     return (
       <div>
         <NewTweetControl onNewTweetCreation = {this.addNewTweetToList}/>
-        <PostInput/>
         <hr/>
         <TweetFeed
           tweetList = {this.state.masterTweetList}/>
