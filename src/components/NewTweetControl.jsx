@@ -19,7 +19,8 @@ class NewTweetControl extends React.Component {
     const formVisible = this.state.formVisible;
     let formAreaContent = null;
     if (formVisible) {
-      formAreaContent = <NewTweetForm/>
+      formAreaContent = <NewTweetForm
+        onNewTweetCreation={this.props.onNewTweetCreation}/>
     } else {
       formAreaContent = <button onClick={this.handleDisplayingNewTweetForm}>Give Blessing...</button>
     }

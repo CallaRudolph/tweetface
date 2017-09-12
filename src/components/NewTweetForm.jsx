@@ -1,5 +1,6 @@
 import React from "react";
 import Tweet from "../models/tweet.js";
+import PropTypes from "prop-types";
 
 class NewTweetForm extends React.Component {
 
@@ -39,6 +40,10 @@ class NewTweetForm extends React.Component {
       </div>
     );
   }
+}
+
+NewTweetForm.propTypes = {
+  onNewTweetCreation: PropTypes.func
 }
 
 export default NewTweetForm;
