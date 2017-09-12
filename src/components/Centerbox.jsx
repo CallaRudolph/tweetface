@@ -22,7 +22,7 @@ class Centerbox extends React.Component {
   render() {
     return (
       <div>
-        <NewTweetControl/>
+        <NewTweetControl onNewTweetCreation = {this.addNewTweetToList}/>
         <PostInput/>
         <hr/>
         <TweetFeed
