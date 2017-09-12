@@ -5,10 +5,12 @@ class NewTweetControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {formVisible: false};
+    this.handleDisplayingNewTweetForm = this.handleDisplayingNewTweetForm.bind(this);
   }
 
   handleDisplayingNewTweetForm(event){
-    console.log("This werks yo!");
+    this.setState({formVisible: true});
+    console.log(this.state);
   }
 
   render(){
