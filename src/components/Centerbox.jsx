@@ -3,16 +3,26 @@ import PostInput from './PostInput';
 import TweetFeed from './TweetFeed';
 import NewTweetControl from './NewTweetControl';
 
-function Centerbox(props) {
+class Centerbox extends React.Component {
 
-  return (
-    <div style={props.styleRuleProp}>
-      <NewTweetControl/>
-      <PostInput/>
-      <hr/>
-      <TweetFeed/>
-    </div>
-  );
+  constructor(props){
+    super(props);
+    this.state = {
+      masterTweetList: [],
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <NewTweetControl/>
+        <PostInput/>
+        <hr/>
+        <TweetFeed
+          tweetList = {this.state.masterTweetList}/>
+      </div>
+    );
+  }
 }
 
 // proptype
