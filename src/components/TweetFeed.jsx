@@ -3,7 +3,7 @@ import Tweet from './Tweet';
 import PropTypes from 'prop-types';
 
 function TweetFeed(props) {
-  
+
   console.log(props.tweetList);
   return (
     <div>
