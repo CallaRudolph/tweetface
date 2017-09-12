@@ -1,4 +1,5 @@
 import React from 'react';
+import NewTweetForm from "./NewTweetForm";
 
 class NewTweetControl extends React.Component {
 
@@ -14,9 +15,10 @@ class NewTweetControl extends React.Component {
   }
 
   render(){
+    const formVisible = this.state.formVisible;
     let formAreaContent = null;
-    if (this.state.formVisible) {
-      formAreaContent = <h1>Form</h1>
+    if (formVisible) {
+      formAreaContent = <NewTweetForm/>
     } else {
       formAreaContent = <button onClick={this.handleDisplayingNewTweetForm}>Give Blessing...</button>
     }
