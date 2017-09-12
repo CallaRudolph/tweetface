@@ -13,7 +13,8 @@ class NewTweetForm extends React.Component {
     event.preventDefault();
     const {_img, _title, _content} = this.refs;
     var newTweet = new Tweet(_img.value, _title.value, _content.value);
-    console.log(newTweet);
+    this.props.onNewTweetCreation(newTweet);
+    this.props.hideFormAfterSubmission();
   }
 
   render(){
@@ -43,7 +44,8 @@ class NewTweetForm extends React.Component {
 }
 
 NewTweetForm.propTypes = {
-  onNewTweetCreation: PropTypes.func
+  onNewTweetCreation: PropTypes.func,
+  hideFormAfterSubmission: PropTypes.func
 }
 
 export default NewTweetForm;
