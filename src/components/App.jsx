@@ -1,17 +1,36 @@
 import React from "react";
-import Body from "./Body.jsx";
-import Header from "./Header.jsx";
+import Body from "./Body";
+import Header from "./Header";
+import SearchResults from "./SearchResults";
 
-function App(props){
-  var centerAllOfIt = {
-    textAlign: "center"
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterSearch: [],
+    };
+    this.addNewSearch = this.addNewSearch.bind(this);
   }
-  return(
-    <div>
-      <Header headerStyleProp={centerAllOfIt}/>
-      <Body bodyStyleProp={centerAllOfIt}/>
-    </div>
-  );
+
+  addNewSearch(newSearch) {
+    var newMasterSearch = this.state.masterSearch.slice();
+    newMasterSearch.push(newSearch);
+    this.setState({masterSearch: newMasterSearch});
+  }
+
+  render() {
+    var centerAllOfIt = {
+      textAlign: "center"
+    }
+    return(
+      <div>
+        <Header headerStyleProp={centerAllOfIt} onNewSearch = {this.addNewSearch}/>
+        <Body bodyStyleProp={centerAllOfIt}/>
+        <SearchResults
+          searchList = {this.state.masterSearch}/>
+      </div>
+    );
+  }
 }
 
 export default App;
